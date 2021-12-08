@@ -1,1 +1,105 @@
-this is a
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+      .button {
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        padding: 20px 20px;
+        cursor: pointer;
+      }
+
+      .button1 {
+        background-color: #efefef;
+        color: black;
+        } /* Green */
+
+      .button1:hover {
+        background-color: #000000;
+        color: white;
+      }
+      
+      .nums {
+        padding: 15px 15px;
+        background-color: #000000;
+        color: white;
+      }
+
+      .nums:hover {
+        background-color: #ffffff;
+        color: black;
+      }
+      
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+  </head>
+  <body style="background-color: #223052; color: white">
+  <strong>Random Number Generator</strong>
+
+  <p id = "maxnumberinput">Max Number: </p>
+
+  <strong> <p style="background-color: black; padding: 10px 10px;" id = "generateRandom">- - -</p> </strong>
+
+  <br>
+
+  <button onclick="generateNumber()" class="button button1">Generate</button>
+
+<br>
+
+  <button onclick="inputNumber(1)" class = "button nums">1</button>
+  <button onclick="inputNumber(2)" class = "button nums">2</button>
+  <button onclick="inputNumber(3)" class = "button nums">3</button>
+
+<br>
+
+  <button onclick="inputNumber(4)" class = "button nums">4</button>
+  <button onclick="inputNumber(5)" class = "button nums">5</button>
+  <button onclick="inputNumber(6)" class = "button nums">6</button>
+
+<br>
+
+  <button onclick="inputNumber(7)" class = "button nums">7</button>
+  <button onclick="inputNumber(8)" class = "button nums">8</button>
+  <button onclick="inputNumber(9)" class = "button nums">9</button>
+
+<br>
+
+  <button onclick="inputNumber(0)" class = "button nums">0</button>
+
+  <button onclick="inputNumber('c')" class = "button nums">C</button>
+
+  <script>
+
+    var inputAsString = "";
+
+    function generateNumber(){
+      document.getElementById("generateRandom").innerHTML = "random number generated with max of " + inputAsString + "... " +  Math.floor(Math.random()  * Number(inputAsString) + 1);
+    }
+
+    function inputNumber(input){
+      if (input=="c"){
+        document.getElementById("maxnumberinput").innerHTML = "Max Number: ";
+
+        document.getElementById("generateRandom").innerHTML = "CLEARED"
+
+      inputAsString = "";
+
+      }else{
+        document.getElementById("maxnumberinput").innerHTML = document.getElementById("maxnumberinput").innerHTML + input;
+
+      inputAsString = inputAsString + input;
+      }
+    }
+  </script>
+
+  </body>
+</html>
