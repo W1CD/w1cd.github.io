@@ -1,1 +1,125 @@
-Hi
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+      .button {
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        padding: 20px 20px;
+        cursor: pointer;
+      }
+
+      .button1 {
+        background-color: #efefef;
+        padding: 15px 15px;
+        color: black;
+        } /* Green */
+
+      .button1:hover {
+        background-color: #000000;
+        color: white;
+      }
+      
+      .nums {
+        padding: 15px 15px;
+        background-color: #000000;
+        color: white;
+      }
+
+      .nums:hover {
+        background-color: #ffffff;
+        color: black;
+      }
+      
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+  </head>
+  <body style="background-color: #223052; color: white">
+  <strong>Calculator</strong>
+
+  <p id = "calculation">Input: </p>
+
+  <strong> <p style="background-color: black; padding: 10px 10px;" id = "output">- - -</p> </strong>
+
+<br>
+
+  <button onclick="inputNumber(1)" class = "button nums">1</button>
+  <button onclick="inputNumber(2)" class = "button nums">2</button>
+  <button onclick="inputNumber(3)" class = "button nums">3</button>
+  <button onclick="inputNumber('+')" class = "button nums">+</button>
+
+<br>
+
+  <button onclick="inputNumber(4)" class = "button nums">4</button>
+  <button onclick="inputNumber(5)" class = "button nums">5</button>
+  <button onclick="inputNumber(6)" class = "button nums">6</button>
+  <button onclick="inputNumber('-')" class = "button nums">--</button>
+
+<br>
+
+  <button onclick="inputNumber(7)" class = "button nums">7</button>
+  <button onclick="inputNumber(8)" class = "button nums">8</button>
+  <button onclick="inputNumber(9)" class = "button nums">9</button>
+  <button onclick="inputNumber('*')" class = "button nums">X</button>
+
+<br>
+
+  <button onclick="inputNumber(0)" class = "button nums">0</button>
+
+  <button onclick="inputNumber('c')" class = "button nums">C</button>
+
+  <button onclick="calculate()" class="button button1">=</button>
+  <button onclick="inputNumber('/')" class = "button nums">/</button>
+
+  <script>
+
+    var inputAsString = "";
+
+    function calculate(){
+      document.getElementById("output").innerHTML = eval(inputAsString);
+    }
+
+    function inputNumber(input){
+      if (input=="c"){
+        document.getElementById("calculation").innerHTML = "Input: ";
+
+        document.getElementById("output").innerHTML = "CLEARED"
+
+      inputAsString = "";
+
+      }else if (input=="+"){
+        document.getElementById("calculation").innerHTML = document.getElementById("calculation").innerHTML + input;
+
+      inputAsString = inputAsString + input;
+      }else if (input=="-"){
+        document.getElementById("calculation").innerHTML = document.getElementById("calculation").innerHTML + input;
+
+      inputAsString = inputAsString + input;
+      }else if (input=="*"){
+        document.getElementById("calculation").innerHTML = document.getElementById("calculation").innerHTML + input;
+
+      inputAsString = inputAsString + input;
+      }else if (input=="/"){
+        document.getElementById("calculation").innerHTML = document.getElementById("calculation").innerHTML + input;
+
+      inputAsString = inputAsString + input;
+      }else{
+        document.getElementById("calculation").innerHTML = document.getElementById("calculation").innerHTML + input;
+
+      inputAsString = inputAsString + input;
+      }
+    }
+
+  </script>
+
+  </body>
+</html>
